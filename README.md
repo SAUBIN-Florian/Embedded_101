@@ -17,8 +17,8 @@ Basic emulation of an arm architecture using qemu, cross compilation and debugge
 
 Tested on Linux Debian 12
 ```bash
-    sudo apt update
-    sudo apt install qemu-system-arm gdb-multiarch gcc-arm-none-eabi binutils-arm-none-eabi
+sudo apt update
+sudo apt install qemu-system-arm gdb-multiarch gcc-arm-none-eabi binutils-arm-none-eabi
 ```
 ## Build
 
@@ -34,10 +34,12 @@ make emu_with_debug
 You can then inspect in a new terminal with gdb
 ```bash
 gdb-multiarch ./build/firmware.elf
-target remote 127.0.0.1:1234
-x/16wx 0x08000000
-info registers
-break main
+
+# in gdb REPL #
+(gdb) target remote 127.0.0.1:1234
+(gdb) x/16wx 0x08000000
+(gdb) info registers
+(gdb) break main
 ...
 ```
 ## License
