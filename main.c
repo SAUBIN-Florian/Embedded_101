@@ -4,6 +4,4 @@ int main(void) {
 	while (1) {
 		counter++;
 	}
-
-	return 0;
 }
